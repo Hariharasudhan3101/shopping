@@ -1,0 +1,46 @@
+{% extends 'firstapp/layouts/main.html' %}
+{% block title %}
+shopkart online shopping
+{% endblock title %}
+
+{% block content %}
+<section class="bg-light py-4 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="mb-3" style="font-size: 40px; font-style: italic;">{{catagory_name}} products</h3>
+                <hr style="border-color:#b8bfc2;">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{% url 'run' %}">Home</a></li>
+                      <li class="breadcrumb-item active">{{category_name}} Collections</li>
+                    </ol>
+                  </nav>
+                  {% include 'firstapp/inc/message.html' %}
+            </div>
+            {% for i in products %}
+            <div class="col-md-4 col-lg-3">
+                <div class="card my-3">
+                    <img src="{{i.product_image.url}}" class="card-image-top" alt="categories" width="130px"><hr>
+                    <a href="{% url 'product_details' catagory_name i.name %}">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{ i.name}}</h5>
+                        <p class="card-text">
+                           <span class="float-start old_price" style="font-weight: bold; color: red;"><s>Rs.{{ i.original_price | stringformat:'d'}}</s></span>
+                           <span class="float-end new_price" style="font-weight: bold; background-color: green; color: white; padding: 2px;border-radius: 5px;">Rs.{{ i.selling_price | stringformat:'d'}}</span>
+                        </p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+{% endblock content %}

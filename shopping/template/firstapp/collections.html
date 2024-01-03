@@ -1,0 +1,45 @@
+{% extends 'firstapp/layouts/main.html' %}
+{% block title %}
+register online shopkart
+{% endblock title %}
+{% block content %}
+
+
+<section class="bg-light py-4 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="mb-3">Categories</h3>
+                <hr style="border-color:#b8bfc2">
+                {% include 'firstapp/inc/message.html' %}
+            </div>
+
+
+
+            
+
+
+            {% for i in item %}
+            <div class="col-sm-4 col-sm-3">
+                <div class="card my-3">
+                    <img src="{{i.image.url}}"class="card-image-top" alt="categories" width="355px">
+                    <a href="{% url 'collections' i.name %}">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{ i.name}}</h5>
+                        <p class="card-text">{{ i.description}}</p>
+                    </div></a>
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+            
+        
+
+
+{% endblock content %}
