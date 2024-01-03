@@ -19,7 +19,7 @@ CATEGORIES PAGE
 ADD TO CART PAGE
 
 ![Screenshot (30)](https://github.com/Hariharasudhan3101/shopping/assets/152836639/f29bbbca-21b4-4c2c-adf2-dcc4e6d23e74)
-FAVOURITE
+FAVOURITE PAGE
 
 ![Screenshot (31)](https://github.com/Hariharasudhan3101/shopping/assets/152836639/9f05191c-233c-4c35-9251-51b4ceb644b8)
 FOOTER PAGE
